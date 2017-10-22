@@ -103,7 +103,6 @@ $(function(){
         }
     };
     $('.lanren .box').each(function () {
-    	alert(2);
         new MouseDirection(this, {
             enter: function ($element, dir) {
                 var $content = $element.find('.content').removeClass('trans');
