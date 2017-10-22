@@ -1,4 +1,11 @@
 (function() {
+	//调用swiper插件
+	(function() {
+		var swiper = new Swiper('.swiper-container', {
+			pagination: '.swiper-pagination',
+			paginationClickable: true
+		});
+	})();
 	//添加导航
 	(function() {
 		var oNav = document.querySelector('#nav');
@@ -9,13 +16,6 @@
 			$(aSpan[i]).addClass('box');
 			aSpan[i].innerHTML = '<p>' + arrNavP[i] + '</p><div class="content">' + arrNavD[i] + '</div>';
 		}
-	})();
-	//调用swiper插件
-	(function() {
-		var swiper = new Swiper('.swiper-container', {
-			pagination: '.swiper-pagination',
-			paginationClickable: true
-		});
 	})();
 	//我的案例，添加鼠标移入移出动画效果
 	(function() {
