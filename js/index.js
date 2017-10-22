@@ -1,4 +1,5 @@
-window.onload = function() {
+(function() {
+	alert(1);
 	//调用swiper插件
 	(function() {
 		var swiper = new Swiper('.swiper-container', {
@@ -10,11 +11,11 @@ window.onload = function() {
 	(function() {
 		var oNav = document.querySelector('#nav');
 		var aSpan = oNav.querySelectorAll('.swiper-pagination-bullet');
-		var arrNavP=['Home','WebKnow','MyCase','AboutMe'];
-		var arrNavD=['首页','前端知识','我的作品','关于本人'];
+		var arrNavP = ['Home', 'WebKnow', 'MyCase', 'AboutMe'];
+		var arrNavD = ['首页', '前端知识', '我的作品', '关于本人'];
 		for(var i = 0; i < aSpan.length; i++) {
 			$(aSpan[i]).addClass('box');
-			aSpan[i].innerHTML = '<p>'+arrNavP[i]+'</p><div class="content">'+arrNavD[i]+'</div>';
+			aSpan[i].innerHTML = '<p>' + arrNavP[i] + '</p><div class="content">' + arrNavD[i] + '</div>';
 		}
 	})();
 	//我的案例，添加鼠标移入移出动画效果
@@ -48,4 +49,9 @@ window.onload = function() {
 		var liH = document.querySelector('.web li').offsetHeight;
 		document.querySelector('.web .fr li:last-child').style.height = liH + 'px';
 	})();
-}
+	//首页图片切换效果
+	setInterval(function() {
+		var oImg = document.querySelector('.home img');
+		oImg.src.indexOf('banner1') > 0 ? oImg.src = 'images/banner2.jpg' : oImg.src = 'images/banner1.jpg';
+	}, 4000);
+})()
